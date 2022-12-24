@@ -1,5 +1,9 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:city_guide_app/screens/attractions.dart';
+import 'package:city_guide_app/screens/f&a.dart';
+import 'package:city_guide_app/screens/homepage.dart';
+import 'package:city_guide_app/screens/news.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
@@ -30,16 +34,16 @@ class _MyHomePageState extends State<MyHomePage> {
   int index = 0;
 
   final screens = [
-    'HomePage',
-    'News',
-    'Attractions',
-    'F&A',
+    HomePage(),
+    NewsScreen(),
+    AttractionsScreen(),
+    FAScreen(),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(color: Color(0xFFF7F6EE)),
+      body: screens[index],
       bottomNavigationBar: Container(
         color: Colors.black,
         child: Padding(
