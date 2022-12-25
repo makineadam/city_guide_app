@@ -2,6 +2,7 @@ import 'package:city_guide_app/screens/attractions.dart';
 import 'package:city_guide_app/screens/f&a.dart';
 import 'package:city_guide_app/screens/homepage.dart';
 import 'package:city_guide_app/screens/news.dart';
+import 'package:city_guide_app/variables.dart';
 import 'package:city_guide_app/weatherservice/location.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
@@ -44,7 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
             }),
             backgroundColor: Colors.black,
             color: Colors.white,
-            activeColor: Color(0xFFF7F6EE),
+            activeColor: themeColor,
             tabBackgroundColor: Color.fromARGB(255, 44, 44, 44),
             padding: EdgeInsets.all(12),
             gap: 8,

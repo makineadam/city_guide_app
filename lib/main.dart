@@ -1,6 +1,7 @@
 import 'package:city_guide_app/screens/f&a.dart';
 import 'package:city_guide_app/screens/homepage.dart';
 import 'package:city_guide_app/screens/news.dart';
+import 'package:city_guide_app/variables.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData.dark(),
+      color: themeColor,
       home: LoadingScreen(),
     );
   }
