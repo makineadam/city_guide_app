@@ -1,9 +1,14 @@
+import 'package:city_guide_app/controller/attractionservice/attraction.dart';
 import 'package:city_guide_app/main.dart';
 import 'package:city_guide_app/mainstructure.dart';
+import 'package:city_guide_app/model/attractions_model.dart';
 import 'package:flutter/material.dart';
 import 'package:city_guide_app/controller/weatherservice/location.dart';
 import 'package:city_guide_app/controller/weatherservice/networking.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+
+double latuser = 0.0;
+double lonuser = 0.0;
 
 var allHeight;
 var allWidth;
@@ -32,9 +37,8 @@ class _LoadingScreenState extends State<LoadingScreen> {
 
     latitude = location.latitude;
     longitude = location.longitude;
-
-    print(latitude);
-    print(longitude);
+    latuser = latitude;
+    lonuser = longitude;
 
     NetworkHelper networkHelper = NetworkHelper(
         'https://api.openweathermap.org/data/2.5/weather?lat=$latitude&lon=$longitude&appid=$apiKey&units=metric');
@@ -43,6 +47,28 @@ class _LoadingScreenState extends State<LoadingScreen> {
 
     var weatherData = await networkHelper.getData();
     var daysWeatherData = await networkHelper2.getData();
+    const List<String> attractions = [
+      'operavebale',
+      'plajlar',
+      'kuleanitveheykeller',
+      'muzeler',
+    ];
+
+    // Looping and Fetching the Data from the APIs.
+    for (String attraction in attractions) {
+      var data = await getCityAttraction(attraction);
+      for (int i = 0; i < data['kayit_sayisi']; i++) {
+        attractionlist.add(
+          Attraction(
+            district: data['onemliyer'][i]['MAHALLE'],
+            title: data['onemliyer'][i]['ADI'],
+            lat: data['onemliyer'][i]['ENLEM'],
+            lon: data['onemliyer'][i]['BOYLAM'],
+            category: attraction,
+          ),
+        );
+      }
+    }
 
     Navigator.push(context, MaterialPageRoute(builder: (context) {
       return MyHomePage(

@@ -27,7 +27,7 @@ class _TransportationCardState extends State<TransportationCard> {
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 50),
                 ),
               ),
-              Image(
+              const Image(
                 image: AssetImage('assets/images/transportcard.png'),
               ),
               Container(
@@ -45,7 +45,7 @@ class _TransportationCardState extends State<TransportationCard> {
                         spreadRadius: -12,
                       )
                     ]),
-                child: Center(
+                child: const Center(
                   child: Text(
                     'Purchase Card',
                     style: TextStyle(
