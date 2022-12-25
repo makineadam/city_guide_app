@@ -11,32 +11,52 @@ class TransportationCard extends StatefulWidget {
 class _TransportationCardState extends State<TransportationCard> {
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+
     return SafeArea(
       child: Scaffold(
         backgroundColor: themeColor,
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text(
-              'Do you want to purchase a local transport card?',
-              style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: Colors.blueGrey,
-                  fontSize: 32),
-            ),
-            Image(
-              image: AssetImage('assets/images/izmirimkart.png'),
-            ),
-            Container(
-              padding: const EdgeInsets.symmetric(vertical: 3),
-              margin: const EdgeInsets.symmetric(horizontal: 40),
-              height: 50,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(50),
-                color: Colors.black,
+        body: Container(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                padding: const EdgeInsets.only(left: 30, top: 70),
+                child: const Text(
+                  'Transportation Card',
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 50),
+                ),
               ),
-            )
-          ],
+              Image(
+                image: AssetImage('assets/images/transportcard.png'),
+              ),
+              Container(
+                margin: const EdgeInsets.only(left: 70, right: 70),
+                width: size.width,
+                height: 100,
+                decoration: BoxDecoration(
+                    color: Colors.blueGrey,
+                    borderRadius: BorderRadius.circular(15),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.blueGrey.withOpacity(.5),
+                        offset: const Offset(0, 25),
+                        blurRadius: 10,
+                        spreadRadius: -12,
+                      )
+                    ]),
+                child: Center(
+                  child: Text(
+                    'Purchase Card',
+                    style: TextStyle(
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
