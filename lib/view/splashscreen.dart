@@ -1,4 +1,4 @@
-import 'package:city_guide_app/controller/attractionservice/attraction.dart';
+import 'package:city_guide_app/controller/attractionservice/attraction_service.dart';
 import 'package:city_guide_app/main.dart';
 import 'package:city_guide_app/mainstructure.dart';
 import 'package:city_guide_app/model/attractions_model.dart';
