@@ -2,6 +2,7 @@ import 'package:city_guide_app/screens/attractions.dart';
 import 'package:city_guide_app/screens/f&a.dart';
 import 'package:city_guide_app/screens/homepage.dart';
 import 'package:city_guide_app/screens/news.dart';
+import 'package:city_guide_app/screens/transportation_card.dart';
 import 'package:city_guide_app/variables.dart';
 import 'package:city_guide_app/weatherservice/location.dart';
 import 'package:flutter/material.dart';
@@ -28,6 +29,7 @@ class _MyHomePageState extends State<MyHomePage> {
     NewsScreen(),
     AttractionsScreen(),
     FAScreen(),
+    TransportationCard(),
   ];
 
   @override
@@ -50,7 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
             padding: EdgeInsets.all(12),
             gap: 8,
             // ignore: prefer_const_literals_to_create_immutables
-            tabs: [
+            tabs: const [
               GButton(
                 icon: Icons.home,
                 text: 'Home',
@@ -60,6 +62,10 @@ class _MyHomePageState extends State<MyHomePage> {
               GButton(
                 icon: Icons.food_bank,
                 text: 'F&A',
+              ),
+              GButton(
+                icon: Icons.credit_card,
+                text: 'TCard',
               ),
             ],
           ),
