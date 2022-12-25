@@ -7,3 +7,6 @@ const TextStyle topicTextStyle = TextStyle(
     fontWeight: FontWeight.bold,
     color: Color.fromARGB(255, 48, 48, 48),
     fontSize: 20);
+
+//News Screen
+const Color borderColor = Color.fromARGB(255, 201, 199, 188);

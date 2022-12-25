@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:city_guide_app/fadeanimation.dart';
 
 class FAScreen extends StatefulWidget {
+  const FAScreen({super.key});
+
   @override
   State<FAScreen> createState() => _FAScreenState();
 }
@@ -16,70 +18,74 @@ class _FAScreenState extends State<FAScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Container(
-              height: 300,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage('assets/images/hotel.webp'),
-                    fit: BoxFit.cover),
-              ),
-              child: Container(
-                decoration: BoxDecoration(
-                    gradient:
-                        LinearGradient(begin: Alignment.bottomRight, colors: [
-                  Colors.black.withOpacity(.8),
-                  Colors.black.withOpacity(.2),
-                ])),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: <Widget>[
-                    FadeAnimation(
-                        1,
-                        Text(
-                          "What you would like to find?",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
+            FadeAnimation(
+              0.4,
+              Container(
+                height: 300,
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage('assets/images/hotel.webp'),
+                      fit: BoxFit.cover),
+                ),
+                child: Container(
+                  decoration: BoxDecoration(
+                      gradient:
+                          LinearGradient(begin: Alignment.bottomRight, colors: [
+                    Colors.black.withOpacity(.8),
+                    Colors.black.withOpacity(.2),
+                  ])),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: <Widget>[
+                      const FadeAnimation(
+                          1,
+                          Text(
+                            "What you would like to find?",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 40,
+                                fontWeight: FontWeight.bold),
+                          )),
+                      const SizedBox(
+                        height: 30,
+                      ),
+                      FadeAnimation(
+                          1.3,
+                          Container(
+                            padding: const EdgeInsets.symmetric(vertical: 3),
+                            margin: const EdgeInsets.symmetric(horizontal: 40),
+                            height: 50,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(50),
                               color: Colors.white,
-                              fontSize: 40,
-                              fontWeight: FontWeight.bold),
-                        )),
-                    SizedBox(
-                      height: 30,
-                    ),
-                    FadeAnimation(
-                        1.3,
-                        Container(
-                          padding: EdgeInsets.symmetric(vertical: 3),
-                          margin: EdgeInsets.symmetric(horizontal: 40),
-                          height: 50,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(50),
-                            color: Colors.white,
-                          ),
-                          child: TextField(
-                            decoration: InputDecoration(
-                                border: InputBorder.none,
-                                prefixIcon: Icon(
-                                  Icons.search,
-                                  color: Colors.grey,
-                                ),
-                                hintStyle:
-                                    TextStyle(color: Colors.grey, fontSize: 15),
-                                hintText: "Search for hotels, restaurants ..."),
-                          ),
-                        )),
-                    SizedBox(
-                      height: 30,
-                    )
-                  ],
+                            ),
+                            child: const TextField(
+                              decoration: InputDecoration(
+                                  border: InputBorder.none,
+                                  prefixIcon: Icon(
+                                    Icons.search,
+                                    color: Colors.grey,
+                                  ),
+                                  hintStyle: TextStyle(
+                                      color: Colors.grey, fontSize: 15),
+                                  hintText:
+                                      "Search for hotels, restaurants ..."),
+                            ),
+                          )),
+                      const SizedBox(
+                        height: 30,
+                      )
+                    ],
+                  ),
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
@@ -87,17 +93,17 @@ class _FAScreenState extends State<FAScreen> {
                       1,
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
+                        children: const [
                           Text("Restaurants", style: topicTextStyle),
                           Text('>', style: topicTextStyle),
                         ],
                       )),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   FadeAnimation(
                       1.4,
-                      Container(
+                      SizedBox(
                         height: 200,
                         child: ListView(
                           scrollDirection: Axis.horizontal,
@@ -117,14 +123,14 @@ class _FAScreenState extends State<FAScreen> {
                           ],
                         ),
                       )),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   FadeAnimation(
                       1,
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
+                        children: const [
                           Text(
                             "Hotels",
                             style: topicTextStyle,
@@ -135,12 +141,12 @@ class _FAScreenState extends State<FAScreen> {
                           ),
                         ],
                       )),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   FadeAnimation(
                       1.4,
-                      Container(
+                      SizedBox(
                         height: 200,
                         child: ListView(
                           scrollDirection: Axis.horizontal,
@@ -160,7 +166,7 @@ class _FAScreenState extends State<FAScreen> {
                           ],
                         ),
                       )),
-                  SizedBox(
+                  const SizedBox(
                     height: 80,
                   ),
                 ],
@@ -176,13 +182,13 @@ class _FAScreenState extends State<FAScreen> {
     return AspectRatio(
       aspectRatio: 1 / 1,
       child: Container(
-        margin: EdgeInsets.only(right: 15),
+        margin: const EdgeInsets.only(right: 15),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
             image:
                 DecorationImage(image: AssetImage(image), fit: BoxFit.cover)),
         child: Container(
-          padding: EdgeInsets.all(20),
+          padding: const EdgeInsets.all(20),
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
               gradient: LinearGradient(begin: Alignment.bottomRight, colors: [
@@ -193,7 +199,7 @@ class _FAScreenState extends State<FAScreen> {
             alignment: Alignment.bottomLeft,
             child: Text(
               title,
-              style: TextStyle(
+              style: const TextStyle(
                   color: Colors.white,
                   fontSize: 20,
                   fontWeight: FontWeight.bold),
