@@ -1,11 +1,11 @@
-import 'package:city_guide_app/screens/f&a.dart';
-import 'package:city_guide_app/screens/homepage.dart';
-import 'package:city_guide_app/screens/news.dart';
+import 'package:city_guide_app/view/f&a.dart';
+import 'package:city_guide_app/view/homepage.dart';
+import 'package:city_guide_app/view/news.dart';
 import 'package:city_guide_app/variables.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-import 'package:city_guide_app/screens/splashscreen.dart';
+import 'package:city_guide_app/view/splashscreen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
