@@ -1,4 +1,4 @@
-import 'package:city_guide_app/apiservice/api_service.dart';
+import 'package:city_guide_app/controller/apiservice/api_service.dart';
 import 'package:city_guide_app/variables.dart';
 import 'package:flutter/material.dart';
 import 'package:city_guide_app/components/custom_list_tile.dart';

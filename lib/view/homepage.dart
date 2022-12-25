@@ -1,4 +1,4 @@
-import 'package:city_guide_app/weatherservice/date.dart';
+import 'package:city_guide_app/controller/weatherservice/date.dart';
 import 'package:flutter/material.dart';
 import 'package:city_guide_app/variables.dart';
 

@@ -1,8 +1,8 @@
 import 'package:city_guide_app/main.dart';
 import 'package:city_guide_app/mainstructure.dart';
 import 'package:flutter/material.dart';
-import 'package:city_guide_app/weatherservice/location.dart';
-import 'package:city_guide_app/weatherservice/networking.dart';
+import 'package:city_guide_app/controller/weatherservice/location.dart';
+import 'package:city_guide_app/controller/weatherservice/networking.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 var allHeight;
