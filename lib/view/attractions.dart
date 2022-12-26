@@ -3,9 +3,14 @@ import 'package:city_guide_app/model/attractions_model.dart';
 import 'package:city_guide_app/variables.dart';
 import 'package:flutter/material.dart';
 
-class AttractionsScreen extends StatelessWidget {
-  AttractionsScreen({super.key});
+class AttractionsScreen extends StatefulWidget {
+  const AttractionsScreen({super.key});
 
+  @override
+  State<AttractionsScreen> createState() => _AttractionsScreenState();
+}
+
+class _AttractionsScreenState extends State<AttractionsScreen> {
   List<Attraction> mainsofattraction = attractionlist;
 
   @override
@@ -18,10 +23,11 @@ class AttractionsScreen extends StatelessWidget {
             itemCount: mainsofattraction.length,
             itemBuilder: (context, index) {
               return AttractionCard(
-                  image: mainsofattraction[index].imageurl,
-                  title: mainsofattraction[index].title,
-                  distance:
-                      mainsofattraction[index].distance.toStringAsFixed(2));
+                image: mainsofattraction[index].imageurl,
+                title: mainsofattraction[index].title,
+                distance: mainsofattraction[index].distance.toStringAsFixed(2),
+                cardColor: mainsofattraction[index].color,
+              );
             },
           )),
     );
@@ -34,15 +40,20 @@ class AttractionCard extends StatelessWidget {
     required this.image,
     required this.title,
     required this.distance,
+    required this.cardColor,
   }) : super(key: key);
 
   final String image;
   final String title;
   final String distance;
+  final Color cardColor;
 
   @override
   Widget build(BuildContext context) {
-    return Card(
+    return Container(
+      margin: const EdgeInsets.all(10),
+      height: 100,
+      color: cardColor,
       child: Row(
         children: [
           SizedBox(
