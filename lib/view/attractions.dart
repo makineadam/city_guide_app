@@ -50,10 +50,16 @@ class AttractionCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+
     return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20),
+        color: cardColor,
+      ),
       margin: const EdgeInsets.all(10),
-      height: 100,
-      color: cardColor,
+      height: size.height * 0.12,
+      width: size.width * 0.9,
       child: Row(
         children: [
           SizedBox(
@@ -62,21 +68,30 @@ class AttractionCard extends StatelessWidget {
               image: AssetImage(image),
             ),
           ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text(
-                title,
-                maxLines: 2,
-                overflow: TextOverflow.clip,
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Text('$distance km away')
-            ],
+          Flexible(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(right: 10, top: 10),
+                  child: Text(
+                    title,
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    style: const TextStyle(
+                        fontWeight: FontWeight.bold, fontSize: 20),
+                  ),
+                ),
+                const SizedBox(
+                  height: 15,
+                ),
+                Text(
+                  '$distance km away',
+                  style: TextStyle(fontSize: 14),
+                )
+              ],
+            ),
           )
         ],
       ),

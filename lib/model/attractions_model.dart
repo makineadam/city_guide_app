@@ -65,7 +65,7 @@ Color findColor(String category) {
   } else if (category == 'operavebale') {
     return Color.fromARGB(255, 247, 218, 248);
   } else if (category == 'muzeler') {
-    return Colors.white;
+    return Colors.grey.shade300;
   } else if (category == 'tarihiyapilar') {
     return Color.fromARGB(255, 245, 244, 190);
   } else if (category == 'galerivesalonlar') {
