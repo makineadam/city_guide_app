@@ -43,9 +43,9 @@ String relatedImage(String category) {
   } else if (category == 'plajlar') {
     return 'assets/images/plaj.png';
   } else if (category == 'operavebale') {
-    return 'assets/images/operaandballet.webp';
+    return 'assets/images/operaandballet.png';
   } else if (category == 'muzeler') {
-    return 'assets/images/museum.webp';
+    return 'assets/images/museum.png';
   } else if (category == 'tarihiyapilar') {
     return 'assets/images/historicalbuildings.png';
   } else if (category == 'galerivesalonlar') {

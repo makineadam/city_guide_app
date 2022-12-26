@@ -18,6 +18,25 @@ class _AttractionsScreenState extends State<AttractionsScreen> {
     mainsofattraction.sort((a, b) => a.distance.compareTo(b.distance));
     return SafeArea(
       child: Scaffold(
+          appBar: PreferredSize(
+            preferredSize: Size.fromHeight(70.0),
+            child: AppBar(
+              automaticallyImplyLeading: false,
+              backgroundColor: Colors.transparent,
+              elevation: 0,
+              title: const Padding(
+                padding: EdgeInsets.only(top: 21),
+                child: Text(
+                  'Nearby Attractions',
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 35),
+                  textAlign: TextAlign.left,
+                ),
+              ),
+            ),
+          ),
           backgroundColor: themeColor,
           body: ListView.builder(
             itemCount: mainsofattraction.length,
