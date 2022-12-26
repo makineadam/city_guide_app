@@ -69,7 +69,7 @@ Color findColor(String category) {
   } else if (category == 'tarihiyapilar') {
     return Color.fromARGB(255, 245, 244, 190);
   } else if (category == 'galerivesalonlar') {
-    return Color.fromARGB(255, 250, 183, 205);
+    return Colors.pink.shade50;
   } else if (category == 'goller') {
     return Color.fromARGB(255, 21, 106, 175);
   } else {
