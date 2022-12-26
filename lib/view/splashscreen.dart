@@ -52,6 +52,9 @@ class _LoadingScreenState extends State<LoadingScreen> {
       'plajlar',
       'kuleanitveheykeller',
       'muzeler',
+      'tarihiyapilar',
+      'galerivesalonlar',
+      'goller',
     ];
 
     // Looping and Fetching the Data from the APIs.
