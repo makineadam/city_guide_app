@@ -10,3 +10,6 @@ const TextStyle topicTextStyle = TextStyle(
 
 //News Screen
 const Color borderColor = Color.fromARGB(255, 201, 199, 188);
+
+const String loremipsum =
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec semper porta sem.';
