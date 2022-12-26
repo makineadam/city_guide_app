@@ -39,13 +39,16 @@ class _FAScreenState extends State<FAScreen> {
                     children: <Widget>[
                       const FadeAnimation(
                           1,
-                          Text(
-                            "What you would like to find?",
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 40,
-                                fontWeight: FontWeight.bold),
+                          Padding(
+                            padding: EdgeInsets.only(left: 20),
+                            child: Text(
+                              "What would you like to find?",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 40,
+                                  fontWeight: FontWeight.bold),
+                            ),
                           )),
                       const SizedBox(
                         height: 30,
@@ -54,7 +57,7 @@ class _FAScreenState extends State<FAScreen> {
                           1.3,
                           Container(
                             padding: const EdgeInsets.symmetric(vertical: 3),
-                            margin: const EdgeInsets.symmetric(horizontal: 40),
+                            margin: const EdgeInsets.only(left: 70, right: 70),
                             height: 50,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(50),
